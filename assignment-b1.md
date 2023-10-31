@@ -13,7 +13,7 @@ suppressPackageStartupMessages(library(testthat))
 
 ## Exercise 1: Make a Function (25 points)
 
-In this exercise, I will be making a function and fortifying it. The
+In this assignment, I will be making a function and fortifying it. The
 function’s purpose is to summarize the count of specific groups in a
 given dataset. One might be interested in the number of classes with in
 a single field, as well as the number of classes at the intersection of
@@ -21,8 +21,8 @@ several fields.
 
 ## Exercise 2: Document your Function (20 points)
 
-The following code chunk include the function proposed in Exercise 1, as
-well as relevant roxygen2 tags.
+The following code chunk includes the function proposed in Exercise 1,
+as well as relevant roxygen2 tags.
 
 ``` r
 #' @title Count Groups
@@ -34,7 +34,7 @@ count_groups <- function(df, groupby_cols) {
   df_cols <- colnames(df)
   
   ## Check that df has at least one row and one column
-  if(nrow(df) == 0 | ncol(df) == 0) {stop("Please use a non-empty dataframe.")}
+  if(nrow(df) == 0 | ncol(df) == 0) {stop("Dataframe must have at least one non-empty entry.")}
   
   ## Check that groupby_cols is non empty
   if (length(groupby_cols) == 0) {stop("groupby_cols is empty. Please provide at least one column name.")}
@@ -166,7 +166,7 @@ Check that invalid (empty) dataframes will throw an error.
 test_that("Invalid dataframe", expect_error(count_groups(data.frame(), "column1")))
 ```
 
-    ## Test passed 🌈
+    ## Test passed 😀
 
 #### Test 2:
 
@@ -182,7 +182,7 @@ test_that("Invalid groupby_names", {
           })
 ```
 
-    ## Test passed 🌈
+    ## Test passed 🥳
 
 #### Test 3:
 
@@ -198,7 +198,7 @@ test_that("Summary tables have correct dimensions", {
   })
 ```
 
-    ## Test passed 🌈
+    ## Test passed 😸
 
 #### Test 4:
 
@@ -212,4 +212,4 @@ test_that("Order of group-by variables does not matter", {
   })
 ```
 
-    ## Test passed 🥳
+    ## Test passed 🥇
